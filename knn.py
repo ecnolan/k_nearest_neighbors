@@ -371,11 +371,11 @@ def test():
     Test nearest neighbor query.
     """
 
-    n = 400
-    points = generate_points(n)
+    n = int(input("Enter desired number of points "))
+    points = generate_points(n-1)
     tree = create_kdtree(points)
     region = tree.region
-    print(region)
+    # print(region)
     target = (random.randint(region[0], region[1]), random.randint(region[2], region[3]))
     result = nearest_neighbor(tree, target)
 
@@ -435,6 +435,12 @@ def time_test():
         print("{:>25} ".format(avg_time))
         row = [n, avg_nodes_visted, avg_time]
         writer.writerow(tuple(row))
+
+    show = input("Would you like a visual example? Y/N ")
+    if show == "Y" or show == "y":
+        test()
+    else:
+        return
 
 
 if __name__ == "__main__":

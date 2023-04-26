@@ -1,5 +1,5 @@
 """
-    File:        range.py
+    File:        knn.py
     Author:      Eva Nolan
     Course:      CS 307 - Computational Geometry
     Assignment:  Synthesis Project
